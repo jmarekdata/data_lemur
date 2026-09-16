@@ -1,0 +1,7 @@
+SELECT  
+candidate_id
+FROM candidates
+WHERE skill in ('Python','Tableau','PostgreSQL')
+GROUP By candidate_id
+HAVING Count(DISTINCT skill) >2
+ORDER BY candidate_id ASC
