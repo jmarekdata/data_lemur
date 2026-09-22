@@ -1,0 +1,4 @@
+SELECT 
+    SUM(CASE WHEN device_type = 'laptop'AND view_time IS NOT NULL THEN 1 ELSE 0 END) AS laptop_views,
+    SUM(CASE WHEN device_type IN ('tablet', 'phone') AND view_time IS NOT NULL THEN 1 ELSE 0 END) AS mobile_views
+FROM viewership;
